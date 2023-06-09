@@ -12,7 +12,7 @@ function App() {
     <Routes>
       <Route element={<Layout />}>
         {/* <Route path="/" element={<Home />}/> */}
-        <Route path="/pokedex" element={<Pokedex />}/>
+        <Route path="/" element={<Pokedex />}/>
         <Route path="/pokecard" element={<Pokecard />}/>
       </Route>
     </Routes>

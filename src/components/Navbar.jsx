@@ -21,10 +21,10 @@ const Navbar = () => {
                     
                     <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                         <li className="nav-item hvr-underline-from-center">
-                            <Link className="nav-link" to="/">Home</Link>
+                            {/* <Link className="nav-link" to="/">Home</Link> */}
                         </li>
                         <li className="nav-item hvr-underline-from-center" id="pokedexLink">
-                            <Link className="nav-link" to="/pokedex">Pokedex</Link>
+                            <Link className="nav-link" to="/">Pokedex</Link>
                         </li>
                         <li className="nav-item hvr-underline-from-center">
                             <Link className="nav-link" to="/pokecard">Pokecard</Link>
