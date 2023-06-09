@@ -10,7 +10,7 @@ const Navbar = () => {
                     <img
                         src="./../src/assets/images/brand/pokemonBrandName.png"
                         height="30"
-                        alt="MDB Logo"
+                        alt="Pokemon"
                         loading="lazy"
                     />
                 </a>
