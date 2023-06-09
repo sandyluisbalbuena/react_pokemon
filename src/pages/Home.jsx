@@ -1,75 +1,75 @@
 import React, { useEffect } from 'react'
 
 const Home = () => {
-	let splide;
-	useEffect(()=>{
-		if (window.innerWidth <= 768) {
-			splide = new Splide( '.splide', {
-				type   : 'loop',
-				perPage: 3,
-				focus  : 'center',
-				arrows: false, 
-				pagination: false,
-				rewind: true,
-				drag   : 'free',
-				autoplay: true,
-				speed: 100000,
-				interval:1000,
-			} ).mount();
-		}
-		else{
-			splide = new Splide( '.splide', {
-				type   : 'loop',
-				perPage: 10,
-				focus  : 'center',
-				arrows: false, 
-				pagination: false,
-				rewind: true,
-				drag   : 'free',
-				autoplay: true,
-				speed: 100000,
-				interval:1000,
-			} ).mount();
-		}
+	// let splide;
+	// useEffect(()=>{
+	// 	if (window.innerWidth <= 768) {
+	// 		splide = new Splide( '.splide', {
+	// 			type   : 'loop',
+	// 			perPage: 3,
+	// 			focus  : 'center',
+	// 			arrows: false, 
+	// 			pagination: false,
+	// 			rewind: true,
+	// 			drag   : 'free',
+	// 			autoplay: true,
+	// 			speed: 100000,
+	// 			interval:1000,
+	// 		} ).mount();
+	// 	}
+	// 	else{
+	// 		splide = new Splide( '.splide', {
+	// 			type   : 'loop',
+	// 			perPage: 10,
+	// 			focus  : 'center',
+	// 			arrows: false, 
+	// 			pagination: false,
+	// 			rewind: true,
+	// 			drag   : 'free',
+	// 			autoplay: true,
+	// 			speed: 100000,
+	// 			interval:1000,
+	// 		} ).mount();
+	// 	}
 
-		getpokemondata(0,20)
-	}, [])
+	// 	getpokemondata(0,20)
+	// }, [])
 
 
-	function getpokemondata(pokemonStart,pokemonEnd)
-	{
-		let RAPIDAPI_API_URL = 'https://pokeapi.co/api/v2/pokemon?limit='+pokemonEnd+'&offset='+pokemonStart;
+	// function getpokemondata(pokemonStart,pokemonEnd)
+	// {
+	// 	let RAPIDAPI_API_URL = 'https://pokeapi.co/api/v2/pokemon?limit='+pokemonEnd+'&offset='+pokemonStart;
 
-		axios.get(`${RAPIDAPI_API_URL}`)
-		.then(response => {
+	// 	axios.get(`${RAPIDAPI_API_URL}`)
+	// 	.then(response => {
 
-			const pokemons = response.data.results;
+	// 		const pokemons = response.data.results;
 
-			pokemons.forEach((pokemon) => {
+	// 		pokemons.forEach((pokemon) => {
 
-				let newImg = document.createElement('img');
-				newImg.setAttribute('src', 'https://img.pokemondb.net/sprites/brilliant-diamond-shining-pearl/normal/1x/'+pokemon.name+'.png');
-				newImg.setAttribute('title', pokemon.name);
-				newImg.classList.add('hvr-grow');
+	// 			let newImg = document.createElement('img');
+	// 			newImg.setAttribute('src', 'https://img.pokemondb.net/sprites/brilliant-diamond-shining-pearl/normal/1x/'+pokemon.name+'.png');
+	// 			newImg.setAttribute('title', pokemon.name);
+	// 			newImg.classList.add('hvr-grow');
 
-				let newAnchor = document.createElement('a');
-				newAnchor.setAttribute('href', '/pokedex?pokemonName='+pokemon.name);
-				newAnchor.appendChild(newImg);
+	// 			let newAnchor = document.createElement('a');
+	// 			newAnchor.setAttribute('href', '/pokedex?pokemonName='+pokemon.name);
+	// 			newAnchor.appendChild(newImg);
 
-				let newSlide = document.createElement('li');
-				newSlide.className = 'splide__slide';
+	// 			let newSlide = document.createElement('li');
+	// 			newSlide.className = 'splide__slide';
 
-				newSlide.appendChild(newAnchor);
+	// 			newSlide.appendChild(newAnchor);
 
-				splide.add(newSlide);
-			});
+	// 			splide.add(newSlide);
+	// 		});
 			
-		})
-		.catch(error => console.error('On get pokemon error', error))
-		.then(() => { 
+	// 	})
+	// 	.catch(error => console.error('On get pokemon error', error))
+	// 	.then(() => { 
 		
-		})
-	}
+	// 	})
+	// }
 
 
 

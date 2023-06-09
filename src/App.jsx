@@ -1,10 +1,10 @@
 import { React } from 'react'
 import {Routes, Route} from 'react-router-dom'
-import Home from './pages/Home'
 import Layout from './components/Layout'
 import './assets/css/style.css'
 import Pokedex from './pages/Pokedex'
 import Pokecard from './pages/Pokecard'
+import Home from './pages/Home'
 
 function App() {
 
